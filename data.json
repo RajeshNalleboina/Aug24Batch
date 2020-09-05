@@ -1,0 +1,27 @@
+{
+  "details": {
+    "name": "APSSDC",
+    "age": 5,
+    "courses": ["web design using ReactJs", "python", "data analysis"]
+  },
+  "trainers": [
+    {
+      "name": "N.Rajesh",
+      "phone": 999999999,
+      "email": "rajesh.n@apssdc.in",
+      "address": "Guntur Dist, Prathipadu, 522015"
+    },
+    {
+      "name": "V.Gayathri Devi",
+      "phone": 999988888,
+      "email": "gayathri.v@apssdc.in",
+      "address": "East Godavatri Dist, Tuni, 524503"
+    }
+  ],
+
+  "tdata": {
+    "name": "N.Surya Narayana",
+    "phone": 99997777,
+    "email": "surya.n@apssdc.in"
+  }
+}
