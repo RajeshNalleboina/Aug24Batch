@@ -18,13 +18,16 @@
 
 // Get the json data by usig Fetch API Method
 fetch("data.json")
-  .then((rajesh) => {
-    return rajesh.json();
+  .then((res) => {
+    return res.json();
   })
   .then((data) => {
     console.log("fetch API");
+    console.log(data);
+    console.log(data.tdata.name);
     suryaData(data.tdata);
     trainersDetails(data.trainers);
+    console.log(data.trainers);
   });
 // implementing the code
 
@@ -48,7 +51,7 @@ image.alt = "Profile Image";
 section.appendChild(image);
 // function creation
 function suryaData(surya) {
-  // console.log(surya.e);
+  // console.log(surya.name);
   let name = document.createElement("h2");
   name.textContent = surya.name;
   // add child2 to the section
@@ -65,31 +68,55 @@ function suryaData(surya) {
   emailId.textContent = surya.email;
   // add child2 to the section
   section.appendChild(emailId);
+
+  // button for redirect to resume
+  let btn = document.createElement("button");
+  btn.textContent = "Click me";
+  section.appendChild(btn);
 }
 // end function
 
 // function for getting trainer array data
 var section1 = document.createElement("section");
+section1.classList.add("profileCards");
+
 function trainersDetails(trainer) {
+  // creatre for-loop
+
   for (i in trainer) {
+    let cardDiv = document.createElement("div");
+    cardDiv.classList.add("trainerCard");
+
     var image = document.createElement("img");
     image.src = "download.png";
-    image.alt = trainer[i].name + "image";
-    section1.appendChild(image);
+    image.alt = trainer[i].name + " image";
+    cardDiv.appendChild(image);
 
     let name = document.createElement("h2");
     name.textContent = trainer[i].name;
-    section1.appendChild(name);
+    cardDiv.appendChild(name);
 
     // Phone Number
     let phoneNo = document.createElement("h2");
     phoneNo.textContent = trainer[i].phone;
-    section1.appendChild(phoneNo);
+    cardDiv.appendChild(phoneNo);
 
     // email
     let emailId = document.createElement("h2");
     emailId.textContent = trainer[i].email;
-    section1.appendChild(emailId);
+    cardDiv.appendChild(emailId);
+
+    // anchor tag to refer another(Resume) page
+    let anch = document.createElement("a");
+    anch.href = "resume.html";
+    cardDiv.appendChild(anch);
+
+    // button for redirect to resume
+    let btn = document.createElement("button");
+    btn.textContent = "Click me";
+    anch.appendChild(btn);
+
+    section1.appendChild(cardDiv);
   }
   // end for loop
 }

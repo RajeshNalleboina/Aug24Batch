@@ -1,0 +1,22 @@
+#main {
+  background-color: azure;
+  text-align: center;
+}
+
+.card,
+.trainerCard {
+  width: 25%;
+  background: rgb(158, 188, 245);
+  box-shadow: 6px 6px 6px -6px;
+  margin: 1% auto;
+}
+img {
+  width: 80%;
+  border-radius: 40%;
+}
+
+.profileCards {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
